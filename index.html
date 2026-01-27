@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mangut</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: black;
+            height: 100%;
+        }
+
+        #unity-canvas {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="unity-canvas"></canvas>
+    <script src="Build/mangut-web.loader.js"></script>
+    <script>
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+            dataUrl: "Build/mangut-web.data.unityweb",
+            frameworkUrl: "Build/mangut-web.framework.js.unityweb",
+            codeUrl: "Build/mangut-web.wasm.unityweb",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "Pink Mango",
+            productName: "Mangut",
+            productVersion: "0.11.0",
+        });
+    </script>
+</body>
+</html>
